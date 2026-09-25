@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carla Álvarez | Ergonomía Aplicada al Trabajo Real</title>
+  <meta name="description" content="Soluciones ergonómicas orientadas a prevenir lesiones y mejorar el desempeño operativo. Servicios en terreno, sistema VCAP y rigor normativo nacional e internacional.">
+  
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!--link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23005C6E'/><path d='M30 65 A25 25 0 0 1 70 35' stroke='%238FB82A' stroke-width='8' fill='none' stroke-linecap='round'/></svg>"-->
+  <link rel="icon" type="image" href="./assets/logoCA1.png">
+</head>
+<body>
+
+  <!-- Custom Antigravity Cursor -->
+  <div class="custom-cursor" id="custom-cursor">
+    <span class="custom-cursor-badge" id="custom-cursor-badge">Ver</span>
+  </div>
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+  <!-- Background Antigravity Waves & Particles Canvas -->
+  <canvas id="antigravity-canvas"></canvas>
+
+  <!-- Smart Sticky Glassmorphic Header -->
+  <header class="header-wrapper" id="header-wrapper">
+    <div class="header-container">
+     <a href="#hero" class="brand-logo" aria-label="Carla Álvarez Ergonomía">
+  <!-- Reemplazo del SVG por la etiqueta IMG -->
+  <img src="./assets/logoCA3.png" alt="Carla Alvarez Ergonomía Logo" class="logo-img">
+</a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#servicios" class="nav-link" data-i18n="nav_services" data-cursor-badge="Explorar">Servicios</a></li>
+          <li><a href="#metodologia" class="nav-link" data-i18n="nav_methodology" data-cursor-badge="VCAP">Metodología</a></li>
+          <li><a href="#estandares" class="nav-link" data-i18n="nav_standards" data-cursor-badge="Normas">Estándares</a></li>
+          <li><a href="#nosotros" class="nav-link" data-i18n="nav_about" data-cursor-badge="Perfil">Nosotros</a></li>
+          <li><a href="#contacto" class="nav-link" data-i18n="nav_contact" data-cursor-badge="Contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Controls (Language, Theme, Mobile Toggle) -->
+      <div class="header-actions">
+        <!-- Bilingual Toggle -->
+        <div class="lang-toggle" role="group" aria-label="Selector de idioma">
+          <span class="lang-pill active" data-lang="es">ES</span>
+          <span class="lang-pill" data-lang="en">EN</span>
+        </div>
+
+        <!-- Light / Dark Theme Button -->
+        <button class="theme-btn" id="theme-toggle" aria-label="Cambiar tema de color" data-cursor-badge="Tema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Drawer (como en pág. 6 del PDF) -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="#hero" class="mobile-nav-link" data-i18n="nav_home">Home</a></li>
+      <li class="mobile-nav-item"><a href="#servicios" class="mobile-nav-link" data-i18n="nav_services">Servicios</a></li>
+      <li class="mobile-nav-item"><a href="#metodologia" class="mobile-nav-link" data-i18n="nav_methodology">Metodología</a></li>
+      <li class="mobile-nav-item"><a href="#estandares" class="mobile-nav-link" data-i18n="nav_standards">Estándares</a></li>
+      <li class="mobile-nav-item"><a href="#nosotros" class="mobile-nav-link" data-i18n="nav_about">Nosotros</a></li>
+      <li class="mobile-nav-item"><a href="#contacto" class="mobile-nav-link" data-i18n="nav_contact">Contacto</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- ====================================================================
+         HERO SECTION (Ergonomía Aplicada al Trabajo Real)
+         ==================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span data-i18n="hero_badge">Ergonomía de Precisión & SST</span>
+          </div>
+          <h1 class="hero-title-main" data-i18n="hero_title_main">ERGONOMÍA APLICADA AL TRABAJO REAL</h1>
+          <h2 class="hero-subtitle" data-i18n="hero_subtitle">TAREAS MÁS SALUDABLES, EFICIENTES Y SOSTENIBLES.</h2>
+          <p class="hero-description" data-i18n="hero_description">
+            Soluciones ergonómicas orientadas a prevenir lesiones y mejorar el desempeño operativo en entornos laborales reales.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#contacto" class="btn btn-primary" data-i18n="hero_btn_eval" data-cursor-badge="Evaluar">
+              Solicitar evaluación
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#servicios" class="btn btn-secondary" data-i18n="hero_btn_services" data-cursor-badge="Servicios">
+              Ver servicios
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Graphic: Vitruvian Man + Ergonomic Metrics -->
+        <div class="hero-visual-wrapper">
+          <img src="assets/waves_transparent.png" alt="Curvas de Alcance Ergonómico" class="hero-waves-bg">
+          <div class="vitruvian-grid-box"></div>
+          <div class="vitruvian-grid-circle"></div>
+
+          <!-- Vitruvian Graphic -->
+          <img src="assets/vitruvian_transparent.png" alt="Hombre de Vitruvio Ergonómico - Carla Álvarez" class="vitruvian-graphic" id="vitruvian-graphic">
+
+          <!-- Interactive Ergonomic Hotspots -->
+          <div class="ergonomic-hotspot" style="top: 15%; left: 46%;" data-cursor-badge="Hombro">
+            <div class="hotspot-dot"></div>
+            <div class="hotspot-tooltip">ISO 11228-3: Rango de flexión escapular &lt; 60°</div>
+          </div>
+
+          <div class="ergonomic-hotspot" style="top: 36%; left: 32%;" data-cursor-badge="Brazo">
+            <div class="hotspot-dot"></div>
+            <div class="hotspot-tooltip">SAE J941: Zona de alcance óptimo frecuente</div>
+          </div>
+
+          <div class="ergonomic-hotspot" style="top: 38%; left: 62%;" data-cursor-badge="Lumbar">
+            <div class="hotspot-dot"></div>
+            <div class="hotspot-tooltip">ISO 11226: Neutralidad postural lumbosacra</div>
+          </div>
+
+          <div class="ergonomic-hotspot" style="top: 60%; left: 50%;" data-cursor-badge="Piernas">
+            <div class="hotspot-dot"></div>
+            <div class="hotspot-tooltip">NTS 015/23: Carga muscular estática en bipedestación</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: ¿POR QUÉ LA ERGONOMÍA ES ESTRATÉGICA?
+         ==================================================================== -->
+    <section class="strategic-section" id="estrategica">
+      <div class="strategic-container">
+        <div class="section-title-wrap">
+          <span class="section-tag" data-i18n="strat_tag">Impacto Comprobado</span>
+          <h2 class="section-title">
+            <span data-i18n="strat_title_1">¿POR QUÉ LA ERGONOMÍA ES</span>
+            <span class="highlight-lime" data-i18n="strat_title_2">ESTRATÉGICA?</span>
+          </h2>
+        </div>
+
+        <!-- Strategic Panoramic Banner with 5 Pillars -->
+        <div class="strategic-banner">
+          <img src="assets/office_strategic.jpg" alt="Entorno operativo de trabajo real" class="strategic-photo">
+               <div class="strategic-overlay"></div>
+
+          <!-- The Floating Cyan/Teal Ribbon with 5 Pillars -->
+          <div class="strategic-ribbon">
+            <!-- Pillar 1 -->
+            <div class="pillar-item" data-cursor-badge="Salud">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20M8 5a4 4 0 0 1 8 0M7 10a5 5 0 0 1 10 0M6 15a6 6 0 0 1 12 0"/>
+                </svg>
+              </div>
+              <span class="pillar-text" data-i18n="pillar_1">Reduce Lesiones</span>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="pillar-item" data-cursor-badge="Bienestar">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+              </div>
+              <span class="pillar-text" data-i18n="pillar_2">Fortalece Bienestar</span>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="pillar-item" data-cursor-badge="Desempeño">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                  <polyline points="16 7 22 7 22 13"/>
+                </svg>
+              </div>
+              <span class="pillar-text" data-i18n="pillar_3">Mejora Productividad</span>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="pillar-item" data-cursor-badge="Eficiencia">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </div>
+              <span class="pillar-text" data-i18n="pillar_4">Optimiza Recursos</span>
+            </div>
+
+            <!-- Pillar 5 -->
+            <div class="pillar-item" data-cursor-badge="Legal">
+              <div class="pillar-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+              </div>
+              <span class="pillar-text" data-i18n="pillar_5">Cumplimiento Normativo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+   </section>
+
+    <!-- ====================================================================
+         SECTION: ¿QUÉ HACEMOS? (Technical Blueprint Observation)
+         ==================================================================== -->
+    <section class="what-we-do-section" id="que-hacemos">
+      <div class="what-we-do-container">
+        <div class="what-we-do-content">
+          <span class="section-tag" data-i18n="what_tag">Enfoque Práctico</span>
+          <h2 class="section-title" data-i18n="what_title">¿QUÉ HACEMOS?</h2>
+          <p class="what-we-do-desc" data-i18n="what_desc">
+            Observamos el trabajo real y proponemos mejoras prácticas adaptadas al contexto operativo.
+          </p>
+          <div class="credentials-chips">
+            <span class="cred-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Observación en Terreno
+            </span>
+            <span class="cred-chip">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Planos & Métricas Biomecánicas
+            </span>
+          </div>
+        </div>
+
+        <div class="blueprint-showcase" data-cursor-badge="Plano">
+          <img src="assets/technical_blueprint.jpg" alt="Ergonomic Analysis - Operator Posture Blueprint" class="blueprint-img">
+          <div class="technical-callout">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            <span data-i18n="what_callout">Análisis técnico de posturas y alcances en maquinaria y estaciones de trabajo.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: SERVICIOS EN TERRENO (Interactive Carousel)
+         ==================================================================== -->
+    <section class="services-section" id="servicios">
+      <div class="services-container">
+        <div class="services-header-row">
+          <div>
+            <span class="section-tag" data-i18n="serv_tag">Intervención Operativa</span>
+            <h2 class="section-title" data-i18n="serv_title">SERVICIOS EN TERRENO</h2>
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="slider-controls">
+            <button class="slider-btn" id="services-prev" aria-label="Servicio anterior" data-cursor-badge="Anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="slider-btn" id="services-next" aria-label="Siguiente servicio" data-cursor-badge="Siguiente">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel Track Wrapper -->
+        <div class="services-carousel-wrapper" id="services-carousel-wrapper">
+          <div class="services-track" id="services-track">
+            <!-- Service 1 -->
+            <article class="service-card" data-cursor-badge="Detalle">
+              <div class="service-card-media">
+                <img src="assets/service_evaluacion.jpg" alt="Evaluación Ergonómica del Puesto" class="service-card-img">
+                <div class="ergonomic-target-overlay"></div>
+                <span class="service-badge-num">01 / SST</span>
+              </div>
+              <div class="service-card-body">
+                <h3 class="service-card-title" data-i18n="s1_title">EVALUACIÓN ERGONÓMICA DEL PUESTO</h3>
+                <p class="service-card-desc" data-i18n="s1_desc">
+                  Analizamos posturas, esfuerzos, movimientos repetitivos, estrés de contacto y condiciones del entorno para identificar riesgos y oportunidades de mejora en la tarea.
+                </p>
+              </div>
+            </article>
+
+            <!-- Service 2 -->
+            <article class="service-card" data-cursor-badge="Detalle">
+              <div class="service-card-media">
+                <img src="assets/service_preventiva.jpg" alt="Ergonomía Preventiva" class="service-card-img">
+                <div class="ergonomic-target-overlay"></div>
+                <span class="service-badge-num">02 / SST</span>
+              </div>
+              <div class="service-card-body">
+                <h3 class="service-card-title" data-i18n="s2_title">ERGONOMÍA PREVENTIVA</h3>
+                <p class="service-card-desc" data-i18n="s2_desc">
+                  Diseñamos acciones preventivas simples y efectivas que se integran al trabajo diario, reduciendo riesgos antes de que se manifiesten.
+                </p>
+              </div>
+            </article>
+
+            <!-- Service 3 -->
+            <article class="service-card" data-cursor-badge="Detalle">
+              <div class="service-card-media">
+                <img src="assets/service_psicosociales.jpg" alt="Factores Psicosociales" class="service-card-img">
+                <div class="ergonomic-target-overlay"></div>
+                <span class="service-badge-num">03 / SST</span>
+              </div>
+              <div class="service-card-body">
+                <h3 class="service-card-title" data-i18n="s3_title">FACTORES PSICOSOCIALES</h3>
+                <p class="service-card-desc" data-i18n="s3_desc">
+                  Analizamos aspectos del trabajo que influyen en el bienestar, el ritmo laboral y la comunicación, fortaleciendo el clima laboral y la sostenibilidad del desempeño.
+                </p>
+              </div>
+            </article>
+
+            <!-- Service 4 -->
+            <article class="service-card" data-cursor-badge="Detalle">
+              <div class="service-card-media">
+                <img src="assets/service_diagnostico.jpg" alt="Diagnóstico Integral de Condiciones de Trabajo" class="service-card-img">
+                <div class="ergonomic-target-overlay"></div>
+                <span class="service-badge-num">04 / SST</span>
+              </div>
+              <div class="service-card-body">
+                <h3 class="service-card-title" data-i18n="s4_title">DIAGNÓSTICO INTEGRAL DE CONDICIONES DE TRABAJO</h3>
+                <p class="service-card-desc" data-i18n="s4_desc">
+                  Realizamos evaluaciones objetivas y globales que integran los riesgos físicos con la percepción del trabajador, generando diagnósticos claros y accionables.
+                </p>
+              </div>
+            </article>
+
+            <!-- Service 5 -->
+            <article class="service-card" data-cursor-badge="Detalle">
+              <div class="service-card-media">
+                <img src="assets/service_organizacion.jpg" alt="Organización del Trabajo" class="service-card-img">
+                <div class="ergonomic-target-overlay"></div>
+                <span class="service-badge-num">05 / SST</span>
+              </div>
+              <div class="service-card-body">
+                <h3 class="service-card-title" data-i18n="s5_title">ORGANIZACIÓN DEL TRABAJO</h3>
+                <p class="service-card-desc" data-i18n="s5_desc">
+                  Evaluamos la distribución de tareas, tiempos y flujos operativos para disminuir sobrecargas y mejorar el rendimiento global del equipo.
+                </p>
+              </div>
+            </article>
+
+            <!-- Service 6 -->
+            <article class="service-card" data-cursor-badge="Detalle">
+              <div class="service-card-media">
+                <img src="assets/service_herramientas.jpg" alt="Mejora del Puesto y Herramientas" class="service-card-img">
+                <div class="ergonomic-target-overlay"></div>
+                <span class="service-badge-num">06 / SST</span>
+              </div>
+              <div class="service-card-body">
+                <h3 class="service-card-title" data-i18n="s6_title">MEJORA DEL PUESTO Y HERRAMIENTAS</h3>
+                <p class="service-card-desc" data-i18n="s6_desc">
+                  Proponemos ajustes en puestos, métodos y herramientas para facilitar la tarea, reducir el esfuerzo innecesario y mejorar la experiencia de trabajo.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots" id="services-dots"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: METODOLOGÍA - SISTEMA VCAP
+         ==================================================================== -->
+    <section class="vcap-section" id="metodologia">
+      <div class="vcap-container">
+        <div class="vcap-intro">
+          <span class="vcap-badge" data-i18n="vcap_badge">Sistema Dinámico & Dinámica de Gestión</span>
+          <h2 class="vcap-title" data-i18n="vcap_title">¿CÓMO TRABAJAMOS?</h2>
+          <h3 class="vcap-action-title" style="color: var(--lime-bright); font-size: 1.25rem; font-weight: 700; margin-bottom: 14px;" data-i18n="vcap_subtitle">SISTEMA VCAP DE GESTIÓN DE RIESGOS ERGONÓMICOS</h3>
+          <p class="vcap-desc" data-i18n="vcap_intro">
+            En entornos operativos complejos, la ergonomía no puede gestionarse como una acción aislada. Requiere un sistema estructurado, dinámico y orientado a resultados. El modelo VCAP integra diagnóstico, intervención y mejora continua, adaptado a su realidad.
+          </p>
+        </div>
+
+        <!-- Interactive Phase Switcher Tabs -->
+        <div class="vcap-tabs-nav">
+          <button class="vcap-tab-btn active" data-vcap="V" data-cursor-badge="Valorar">
+            <span class="letter">V</span> VALORAR
+          </button>
+          <button class="vcap-tab-btn" data-vcap="C" data-cursor-badge="Crear">
+            <span class="letter">C</span> CREAR
+          </button>
+          <button class="vcap-tab-btn" data-vcap="A" data-cursor-badge="Aplicar">
+            <span class="letter">A</span> APLICAR
+          </button>
+          <button class="vcap-tab-btn" data-vcap="P" data-cursor-badge="Potenciar">
+            <span class="letter">P</span> POTENCIAR
+          </button>
+        </div>
+
+        <!-- VCAP Cards Grid -->
+        <div class="vcap-cards-grid">
+          <!-- Phase V -->
+          <div class="vcap-card active" data-phase="V">
+            <div class="vcap-card-letter">V</div>
+            <div class="vcap-card-action" data-i18n="vcap_v_action">VALORAR</div>
+            <h4 class="vcap-card-title" data-i18n="vcap_v_title">DIAGNÓSTICO Y PRIORIZACIÓN DEL RIESGO ERGONÓMICO</h4>
+            <p class="vcap-card-desc" data-i18n="vcap_v_desc">
+              Evaluación técnica basada en métodos reconocidos para medir y clasificar los riesgos en el sistema de trabajo.
+            </p>
+            <ul class="vcap-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_v_li1">Identificación de peligros en tareas reales.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_v_li2">Aplicación de metodologías (posturales, repetitividad, carga física).</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_v_li3">Ponderación del riesgo (de niveles críticos a condiciones aceptables).</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_v_li4">Generación de una línea base para la toma de decisiones.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Phase C -->
+          <div class="vcap-card" data-phase="C">
+            <div class="vcap-card-letter">C</div>
+            <div class="vcap-card-action" data-i18n="vcap_c_action">CREAR</div>
+            <h4 class="vcap-card-title" data-i18n="vcap_c_title">DISEÑO DE SOLUCIONES Y PROGRAMA ERGONÓMICO</h4>
+            <p class="vcap-card-desc" data-i18n="vcap_c_desc">
+              Desarrollo de estrategias de intervención alineadas con la operación y los recursos de su empresa.
+            </p>
+            <ul class="vcap-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_c_li1">Diseño de medidas de control (ingeniería, administrativas y organizacionales).</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_c_li2">Desarrollo de programas ergonómicos estructurados.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_c_li3">Integración con sistemas de gestión existentes.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_c_li4">Definición de responsables, indicadores y trazabilidad.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Phase A -->
+          <div class="vcap-card" data-phase="A">
+            <div class="vcap-card-letter">A</div>
+            <div class="vcap-card-action" data-i18n="vcap_a_action">APLICAR</div>
+            <h4 class="vcap-card-title" data-i18n="vcap_a_title">IMPLEMENTACIÓN EFECTIVA EN CAMPO</h4>
+            <p class="vcap-card-desc" data-i18n="vcap_a_desc">
+              Puesta en marcha práctica de los controles ergonómicos garantizando la aceptación del personal.
+            </p>
+            <ul class="vcap-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_a_li1">Implementación de controles ergonómicos.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_a_li2">Capacitación y sensibilización del personal.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_a_li3">Acompañamiento en la ejecución de cambios.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_a_li4">Verificación de cumplimiento operativo.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Phase P -->
+          <div class="vcap-card" data-phase="P">
+            <div class="vcap-card-letter">P</div>
+            <div class="vcap-card-action" data-i18n="vcap_p_action">POTENCIAR</div>
+            <h4 class="vcap-card-title" data-i18n="vcap_p_title">SEGUIMIENTO, OPTIMIZACIÓN Y MEJORA CONTINUA</h4>
+            <p class="vcap-card-desc" data-i18n="vcap_p_desc">
+              Aseguramiento de la sostenibilidad técnica y madurez de la cultura preventiva en la organización.
+            </p>
+            <ul class="vcap-checklist">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_p_li1">Seguimiento de indicadores ergonómicos.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_p_li2">Evaluación de efectividad de los controles.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_p_li3">Retroalimentación del sistema y mejora progresiva.</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="vcap_p_li4">Consolidación de la cultura preventiva.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: ESTÁNDARES Y REFERENCIAS TÉCNICAS
+         ==================================================================== -->
+    <section class="standards-section" id="estandares">
+      <div class="standards-container">
+        <div class="standards-intro-grid">
+          <div>
+            <span class="section-tag" data-i18n="std_tag">Rigor Normativo & Científico</span>
+            <h2 class="section-title">
+              <span data-i18n="std_title_1">ESTÁNDARES Y REFERENCIAS</span><br>
+              <span class="highlight-lime" data-i18n="std_title_2">TÉCNICAS EN ERGONOMÍA</span>
+            </h2>
+          </div>
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--teal-primary); margin-bottom: 10px;" data-i18n="std_sub_title">
+              RIGOR NORMATIVO Y PRECISIÓN TÉCNICA APLICADOS AL TRABAJO REAL
+            </h3>
+            <p style="color: var(--text-muted); line-height: 1.65;" data-i18n="std_intro_desc">
+              En nuestros proyectos, fusionamos el cumplimiento estricto de la legislación boliviana con los estándares internacionales más avanzados. Este marco garantiza soluciones con validez legal y precisión científica, optimizando tanto el bienestar del trabajador como la productividad de la empresa.
+            </p>
+          </div>
+        </div>
+
+        <!-- Two Master Normative Cards (Click to open Modals) -->
+        <div class="standards-cards-row">
+          <!-- Bolivia Card -->
+          <div class="norm-modal-card" data-modal-target="modal-bolivia" data-cursor-badge="Ver Bolivia">
+            <span class="norm-card-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              NTS & NB
+            </span>
+            <h3 class="norm-card-title" data-i18n="std_bolivia_card_title">MARCO NORMATIVO NACIONAL (BOLIVIA)</h3>
+            <p class="norm-card-desc" data-i18n="std_bolivia_card_desc">
+              Nuestra gestión asegura la conformidad ante entes reguladores bolivianos según normativa SST (NTS & NB).
+            </p>
+            <div class="norm-card-action">
+              <span data-i18n="std_bolivia_btn">Ver Marco Normativo Bolivia</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+
+          <!-- International Card -->
+          <div class="norm-modal-card" data-modal-target="modal-internacional" data-cursor-badge="Ver ISO/SAE">
+            <span class="norm-card-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              ISO & SAE
+            </span>
+            <h3 class="norm-card-title" data-i18n="std_intl_card_title">ESTÁNDARES INTERNACIONALES (ISO & SAE)</h3>
+            <p class="norm-card-desc" data-i18n="std_intl_card_desc">
+              Criterios técnicos de alta precisión para el análisis de factores humanos y diseño ergonómico de ingeniería.
+            </p>
+            <div class="norm-card-action">
+              <span data-i18n="std_intl_btn">Ver Estándares ISO / SAE</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scientific References Grid -->
+        <div class="scientific-box">
+          <h3 class="scientific-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M4 22h16a2 2 0 0 0 2-2V8l-6-6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z"/></svg>
+            <span data-i18n="sci_title">REFERENCIAS CIENTÍFICAS Y ORGANISMOS DE SALUD</span>
+          </h3>
+
+          <div class="scientific-grid">
+            <div class="scientific-item">
+              <div class="scientific-item-name">OMS (Organización Mundial de la Salud)</div>
+              <div class="scientific-item-desc">Directrices para entornos de trabajo saludables y prevención de enfermedades no transmisibles.</div>
+            </div>
+
+            <div class="scientific-item">
+              <div class="scientific-item-name">OSHA / CCOHS</div>
+              <div class="scientific-item-desc">Protocolos de seguridad industrial y guías de buenas prácticas operativas internacionales.</div>
+            </div>
+
+            <div class="scientific-item">
+              <div class="scientific-item-name">NIOSH / CDC</div>
+              <div class="scientific-item-desc">Métodos científicos para la prevención y control de trastornos musculoesqueléticos (TME).</div>
+            </div>
+
+            <div class="scientific-item">
+              <div class="scientific-item-name">ACGIH</div>
+              <div class="scientific-item-desc">Criterios técnicos para límites de exposición física (TLV) y control de la fatiga muscular.</div>
+            </div>
+
+            <div class="scientific-item">
+              <div class="scientific-item-name">OIT / IEA</div>
+              <div class="scientific-item-desc">Enfoque integral de factores humanos, ergonomía organizacional y trabajo decente.</div>
+            </div>
+
+            <div class="scientific-item">
+              <div class="scientific-item-name">ICNIRP</div>
+              <div class="scientific-item-desc">Seguridad y límites ocupacionales en la exposición a radiaciones no ionizantes (UV/Luz).</div>
+            </div>
+          </div>
+
+          <div class="quality-guarantee-banner">
+            <div class="guarantee-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="guarantee-text">
+              <h4 data-i18n="sci_quality_title">GARANTÍA DE CALIDAD BASADA EN EVIDENCIA</h4>
+              <p data-i18n="sci_quality_desc">
+                Este robusto respaldo técnico nos permite desarrollar soluciones basadas en evidencia, integrando con exactitud el diseño del puesto, las capacidades humanas y las exigencias del entorno laboral.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: DETRÁS DE LA ERGONOMÍA (Carla Álvarez Bio)
+         ==================================================================== -->
+    <section class="about-section" id="nosotros">
+      <div class="about-container">
+        <div class="about-photo-card" data-cursor-badge="Carla">
+          <img src="assets/carla_alvarez.jpg" alt="Carla Álvarez - Especialista en Ergonomía" class="about-photo">
+          <div class="about-photo-badge">
+            <h3>Carla Álvarez</h3>
+            <p>Especialista en Ergonomía & Diseñadora Industrial</p>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="section-tag" data-i18n="about_tag">Liderazgo & Experiencia</span>
+          <h2 class="section-title">
+            <span data-i18n="about_title_1">DETRÁS DE LA</span>
+            <span class="highlight-lime" data-i18n="about_title_2">ERGONOMÍA</span>
+          </h2>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--teal-primary);" data-i18n="about_motto">
+            DISEÑAR EL TRABAJO PENSANDO EN LAS PERSONAS
+          </h3>
+
+          <p class="about-bio-text" data-i18n="about_p1">
+            Diseñadora Industrial de la Universidad de Chile, especialista en Ergonomía y con formación de posgrado en Educación Superior.
+          </p>
+          <p class="about-bio-text" data-i18n="about_p2">
+            Cuenta con formación internacional en Evaluación de la Ergonomía de Puestos de Trabajo por la <strong>Universitat Politècnica de València, España</strong>.
+          </p>
+          <p class="about-bio-text" data-i18n="about_p3">
+            Actualmente realiza un <strong>Doctorado en Ciencias de la Ingeniería</strong>, centrado en el desarrollo de un sistema complejo de gestión ergonómica.
+          </p>
+          <p class="about-bio-text" data-i18n="about_p4">
+            Cuenta con amplia experiencia en docencia e investigación universitaria, así como en la producción académica, con libros y artículos científicos vinculados al diseño, la ergonomía y la ingeniería.
+          </p>
+
+          <div class="credentials-chips">
+            <span class="cred-chip">🎓 Univ. de Chile</span>
+            <span class="cred-chip">🏛️ UPV España</span>
+            <span class="cred-chip">🔬 Doctorado en Ingeniería</span>
+            <span class="cred-chip">📚 Autora & Docente</span>
+          </div>
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--teal-primary);" data-i18n="about_equip">
+            NUESTRO EQUIPO PROFESIONAL 
+          </h4>
+          <p class="about-bio-text" data-i18n="about_p5">
+            Contamos con un equipo multidisciplinario de profesionales especializados, comprometidos con brindar servicios técnicos basados en conocimiento especializado, experiencia y criterios profesionales reconocidos.
+          </p>
+          <p class="about-bio-text">
+            Certified Occupational Hygienist (HOC) sept. 2024 - 2029 ID de la credencial: No- JIHO.0021
+          </p>
+          <p class="about-bio-text">
+            Specialist Exposure Decision Analysis EDA nov. 2022 - 2027 ID de la credencial: ID: 297462
+          </p>
+          <div class="credentials-chips">
+            <span class="cred-chip">🌐 JIHO</span>
+            <span class="cred-chip">🦺 AIHA</span>
+          </div>
+              </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION: CONTACTO & FOOTER
+         ==================================================================== -->
+    <section class="contact-section" id="contacto">
+      <div class="contact-container">
+        <!-- Contact Details -->
+        <div class="contact-info">
+          <span class="hero-badge" style="background: rgba(255,255,255,0.1); border-color: var(--lime-bright); color: var(--lime-bright);" data-i18n="contact_tag">Inicie su Evaluación</span>
+          <h2 class="contact-title" data-i18n="contact_title">CONTACTO DIRECTO</h2>
+          <p class="contact-desc" data-i18n="contact_desc">
+            Conversemos sobre cómo optimizar la salud de sus colaboradores y la eficiencia de sus operaciones.
+          </p>
+
+          <ul class="contact-details-list">
+            <li class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div class="contact-item-body">
+                <h4 data-i18n="contact_direct_dm">DM Carla Álvarez</h4>
+                <p>Especialista en Ergonomía Industrial</p>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-item-body">
+                <h4 data-i18n="contact_phone">Cel / WhatsApp</h4>
+                <a href="https://wa.me/59165812090" target="_blank" rel="noopener">+591 65812090</a>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-item-body">
+                <h4 data-i18n="contact_address_label">Ubicación</h4>
+                <p data-i18n="contact_address">Av. José María Avilés Nº 3547. Tarija - Bolivia.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="contact-form-card">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="form-name" class="form-label" data-i18n="form_name">Nombre completo</label>
+              <input type="text" id="form-name" class="form-input" required placeholder="Ej. Ing. Marco Ramos" data-i18n-placeholder="form_name">
+            </div>
+
+            <div class="form-group">
+              <label for="form-email" class="form-label" data-i18n="form_email">Correo electrónico</label>
+              <input type="email" id="form-email" class="form-input" required placeholder="correo@empresa.com" data-i18n-placeholder="form_email">
+            </div>
+
+            <div class="form-group">
+              <label for="form-message" class="form-label" data-i18n="form_message">Cuéntenos algo que nos ayude a prepararnos para la reunión</label>
+              <textarea id="form-message" class="form-textarea" placeholder="Describe los puestos a evaluar, número de colaboradores o requerimientos..." data-i18n-placeholder="form_message"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-lime form-submit-btn" data-cursor-badge="Enviar">
+              <span data-i18n="form_submit">Enviar Solicitud</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <footer class="footer-bottom">
+        <p>© 2026 Carla Álvarez. <span data-i18n="footer_rights">Todos los derechos reservados. Ergonomía Aplicada al Trabajo Real.</span></p>
+        <a href="#hero" class="back-to-top" data-cursor-badge="Subir" data-i18n="footer_goback">
+          Volver arriba
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       MODAL 1: MARCO NORMATIVO NACIONAL (BOLIVIA) - Fiel a Pág. 13
+       ==================================================================== -->
+  <div class="modal-overlay" id="modal-bolivia" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Cerrar ventana modal">&times;</button>
+      <div class="modal-header">
+        <div class="modal-badge">SST BOLIVIA</div>
+        <h3 class="modal-title">MARCO NORMATIVO NACIONAL (BOLIVIA)</h3>
+        <p class="modal-subtitle">
+          Nuestra gestión asegura la conformidad ante los entes reguladores bolivianos, basándonos en la normativa vigente de Seguridad y Salud en el Trabajo (SST):
+        </p>
+      </div>
+
+      <div class="modal-body">
+        <div class="norm-category-block lime-accent">
+          <div class="norm-cat-title">Ergonomía</div>
+          <span class="norm-cat-code">NTS 015/23</span>
+          <p class="norm-cat-desc">Norma matriz para la identificación, evaluación y control de riesgos disergonómicos.</p>
+        </div>
+
+        <div class="norm-category-block">
+          <div class="norm-cat-title">Sistema de Gestión de SST</div>
+          <span class="norm-cat-code">NTS 009/23</span>
+          <p class="norm-cat-desc">Estructura para la gestión integral de la salud ocupacional.</p>
+        </div>
+
+        <div class="norm-category-block">
+          <div class="norm-cat-title">Señalización de Seguridad</div>
+          <span class="norm-cat-code">NB 55001</span>
+          <p class="norm-cat-desc">Estandarización de colores y símbolos para reducir la carga cognitiva y mejorar la respuesta ante riesgos.</p>
+        </div>
+
+        <div class="norm-category-block">
+          <div class="norm-cat-title">Condiciones Ambientales y Salud (NTS & NB)</div>
+          <p class="norm-cat-desc"><strong>Iluminación:</strong> NTS 001 / NB 594.</p>
+          <p class="norm-cat-desc"><strong>Ruido y Vibraciones:</strong> NTS 002 / NB 511/512 / NB 607/608.</p>
+          <p class="norm-cat-desc"><strong>Protección Personal:</strong> NTS 014 (EPP) como apoyo al diseño ergonómico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL 2: ESTÁNDARES INTERNACIONALES (ISO & SAE) - Fiel a Pág. 12
+       ==================================================================== -->
+  <div class="modal-overlay" id="modal-internacional" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Cerrar ventana modal">&times;</button>
+      <div class="modal-header">
+        <div class="modal-badge">ISO & SAE INTERNATIONAL</div>
+        <h3 class="modal-title">ESTÁNDARES INTERNACIONALES (ISO & SAE)</h3>
+        <p class="modal-subtitle">
+          Aplicamos criterios técnicos de alta precisión para el análisis de factores humanos y diseño de ingeniería:
+        </p>
+      </div>
+
+      <div class="modal-body">
+        <div class="norm-category-block lime-accent">
+          <div class="norm-cat-title">Diseño y sistemas de trabajo</div>
+          <span class="norm-cat-code">ISO 6385 / ISO 9241</span>
+          <p class="norm-cat-desc">Ergonomía aplicada a procesos, tareas y puestos de trabajo.</p>
+        </div>
+
+        <div class="norm-category-block">
+          <div class="norm-cat-title">Biomecánica y postura</div>
+          <span class="norm-cat-code">ISO 11226 / ISO 11228 (Partes 1, 2, 3)</span>
+          <p class="norm-cat-desc">Evaluación de posturas de trabajo estáticas, movimientos repetitivos y manipulación manual de cargas.</p>
+        </div>
+
+        <div class="norm-category-block">
+          <div class="norm-cat-title">Señalética y percepción</div>
+          <span class="norm-cat-code">ISO 7010 / ISO 3864</span>
+          <p class="norm-cat-desc">Diseño de información visual y principios ergonómicos de seguridad.</p>
+        </div>
+
+        <div class="norm-category-block">
+          <div class="norm-cat-title">Factores ambientales</div>
+          <span class="norm-cat-code">ISO 9612 / ISO 2631 / ISO 8995</span>
+          <p class="norm-cat-desc">Medición y evaluación de ruido laboral, vibraciones de cuerpo entero / extremidades y confort térmico.</p>
+        </div>
+
+        <div class="norm-category-block">
+          <div class="norm-cat-title">Antropometría y maquinaria</div>
+          <span class="norm-cat-code">ISO 14738 / ISO 6682 / SAE J941 / SAE J287</span>
+          <p class="norm-cat-desc">Diseño de cabinas de operadores, alcances funcionales y envolventes de confort ergonómico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-msg" id="toast-msg">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span>¡Mensaje preparado! Redirigiendo a WhatsApp...</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
